@@ -1,16 +1,17 @@
+import { useEffect } from "react";
 import {
 	BrowserRouter as Router,
 	Switch,
 	Route,
 } from "react-router-dom";
-import "./App.css";
 import Header from "./components/Header";
 import Home from "./components/Home";
 import Checkout from "./components/Checkout";
 import Login from "./components/Login";
-import { useEffect } from "react";
+import Payment from "./components/Payment";
 import { auth } from "./firebase";
 import { useStateValue } from "./StateProvider";
+import "./App.css";
 
 const App = () => {
 	const [{}, dispatch] = useStateValue();
@@ -42,6 +43,10 @@ const App = () => {
 					<Route path="/checkout">
 						<Header />
 						<Checkout />
+					</Route>
+					<Route path="/payment">
+						<Header />
+						<Payment />
 					</Route>
 					<Route path="/">
 						<Header />
